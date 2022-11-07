@@ -3,7 +3,7 @@
 body {
     // background: black;
     // font-family: 'Nova Flat', sans-serif;
-    font-family: Amarello;
+    font-family: Gurajada, serif;
 
     // background: url("https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/06/14131635/LEC-Summer-2019.jpg");
     background-size: cover;
@@ -19,16 +19,133 @@ body {
 @import "./animation";
 
 .Europe {
-    .MiddleBox {
+    .TopBar {
+        width: 100%;
+        height: 90px;
+        background: #282828;
         position: absolute;
+        bottom: 260px;
+
+        display: inline-flex;
+        justify-content: space-between;
+
+        .MiddleImage {
+            width: 100%;
+            height: 100%;
+            background-image: url('/assets/topo_meio.png');
+
+            display: grid;
+            grid-template: 90px / 1fr 32px 1fr;
+            gap: 1rem;
+            align-items: center;
+
+            color: #fff;
+            font-size: 1.3rem;
+            font-family: Gurajada, serif !important;
+
+            .TeamContainerBlue {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .TeamContainerRed {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .TeamScoreTop {
+                font-size: 3rem;
+            }
+
+            .DetailMidTop {
+                width: 32px;
+                height: 32px;
+                background-image: url('/assets/acad0.svg');
+                background-size: contain;
+            }
+
+            .TeamNameTop {
+                line-height: 100%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                text-transform: uppercase;
+
+                .TeamNameLong {
+                    font-size: 2rem;
+                }
+                .TeamNameShort {
+                    font-size: 1.6rem;
+                }
+            }
+
+            .TeamLogoTop {
+                width: 60px;
+                height: 60px;
+                margin: 0 10px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+
+            .TeamBlue {
+                padding: 0 1rem;
+                border-right: 3px solid #3FA9F5;
+                align-items: flex-end;
+            }
+            .TeamRed {
+                padding: 0 1rem;
+                border-left: 3px solid #C1272D;
+                align-items: flex-start;
+            }
+        }
+
+        .Bans {
+            .BansBox {
+                display: inline-flex;
+                .Ban {
+                    display: inline-flex;
+                    .BanImage {
+                        width: 90px;
+                        height: 90px;
+                        background-size: contain;
+                        background-position: center;
+                        img {
+                            width: 90px;
+                            height: 90px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ChampSelect {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 674px 572px 674px;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    .MiddleBox {
+        // position: absolute;
         color: white;
         width: var(--box-width);
-        height: calc(var(--box-pick-height) + var(--box-ban-height));
-
-        bottom: var(--champselect-margin-bot);
-        left: 50%;
-        transform: translateX(-50%);
+        height: var(--box-pick-height);
+        background: #282828;
+        background-image: url('/assets/meio.png');
+        // bottom: var(--champselect-margin-bot);
+        // left: 50%;
+        // transform: translateX(-50%);
         overflow: hidden;
+
+        grid-area: 1 / 2 / 2 / 3;
     }
 
     .Patch {

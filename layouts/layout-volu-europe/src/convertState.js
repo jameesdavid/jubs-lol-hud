@@ -1,4 +1,5 @@
-import banImg from "./assets/ban_placeholder.svg";
+import banImgBlue from "./assets/banblue.svg";
+import banImgRed from "./assets/banred.svg";
 import topSplash from "./assets/top_splash_placeholder.svg";
 import jungSplash from "./assets/jung_splash_placeholder.svg";
 import midSplash from "./assets/mid_splash_placeholder.svg";
@@ -18,7 +19,7 @@ const makeUrlAbsolute = (url, backendUrl) => {
   return components[0] + '//' + components[2] + url;
 };
 
-const putPlaceholders = (team,  backendUrl) => {
+const putPlaceholders = (team,  backendUrl, side) => {
   for (let i = 0; i < 5; i++) {
     // Picks
     // Check if exists
@@ -56,14 +57,14 @@ const putPlaceholders = (team,  backendUrl) => {
       // Does not exist
       team.bans.push({
         champion: {
-          squareImg: banImg
+          squareImg: side === 'blue' ? banImgBlue : banImgRed
         }
       });
     } else {
       const ban = team.bans[i];
       if (!ban.champion || !ban.champion.squareImg) {
         ban.champion = {
-          squareImg: banImg
+          squareImg: side === 'blue' ? banImgBlue : banImgRed
         }
       }
 
@@ -74,8 +75,8 @@ const putPlaceholders = (team,  backendUrl) => {
 
 const convertState = (state, backendUrl) => {
   if (Object.keys(state).length !== 0) {
-    putPlaceholders(state.blueTeam, backendUrl);
-    putPlaceholders(state.redTeam, backendUrl);
+    putPlaceholders(state.blueTeam, backendUrl, 'blue');
+    putPlaceholders(state.redTeam, backendUrl, 'red');
   }
   return state;
 }

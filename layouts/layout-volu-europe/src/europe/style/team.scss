@@ -1,9 +1,9 @@
 .Team {
-  position: absolute;
-  width: var(--box-team-width);
-  height: var(--box-height);
+  // position: absolute;
+  // width: var(--box-team-width);
+  // height: var(--box-height);
 
-  bottom: var(--champselect-margin-bot);
+  // bottom: var(--champselect-margin-bot);
 
   .TeamName {
     font-size: 40px;
@@ -36,20 +36,22 @@
   @import "./bans";
 
   &.TeamBlue {
-    right: calc(50% + calc(var(--box-width) / 2));
+    // right: calc(50% + calc(var(--box-width) / 2));
+    grid-area: 1 / 1 / 2 / 2;
 
     .TeamScore {
       border-right: 3px solid black;
     }
 
     .Bans {
-      justify-content: flex-end;
-      background-color: var(--color-blue);
-      border: solid var(--color-blue) var(--border-width);
+      justify-content: flex-start;
+      // background-color: var(--color-blue);
+      background-color: #282828;
+      // border: solid var(--color-blue) var(--border-width);
       float: right;
 
       .Ban {
-        border-left: solid var(--color-blue) var(--border-width);
+        border-left: 1px solid #3FA9F5;
 
         .BanImage.Active::before {
           background-image: linear-gradient(to left, var(--color-blue) 0%, rgba(0, 0, 0, 0) 50%, var(--color-blue) 100%);
@@ -72,19 +74,22 @@
   }
 
   &.TeamRed {
-    left: calc(50% + calc(var(--box-width) / 2));
+    // left: calc(50% + calc(var(--box-width) / 2));
+    grid-area: 1 / 3 / 2 / 4;
 
     .TeamScore {
       border-left: 3px solid black;
     }
 
     .Bans {
-      background-color: var(--color-red);
-      border: solid var(--color-red) var(--border-width);
+      justify-content: flex-end;
+      // background-color: var(--color-red);
+      background-color: #282828;
+      // border: solid var(--color-red) var(--border-width);
       float: left;
 
       .Ban {
-        border-right: solid var(--color-red) var(--border-width);
+        border-right: 1px solid #C1272D;
 
         .BanImage.Active::before {
           background-image: linear-gradient(to left, var(--color-red) 0%, rgba(0, 0, 0, 0) 50%, var(--color-red) 100%);
