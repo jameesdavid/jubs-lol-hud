@@ -5,7 +5,10 @@
 }
 
 .AnimationHidden {
-  .Timer {
+  .TopBar2, .TimeBar {
+    opacity: 0;
+  }
+  .Timer, .MiddleBox {
     position: relative;
     /* bottom: -130px; */
     bottom: -300px;
@@ -30,6 +33,9 @@
 }
 
 .AnimationTimer {
+  .TopBar2, .TimeBar {
+    opacity: 0;
+  }
   .Timer {
     .Blue {
       left: 100% !important;
@@ -44,6 +50,7 @@
       animation-timing-function: ease-in;
     }
   }
+  
   .Team {
     &.TeamBlue {
       .Bans {
@@ -77,6 +84,9 @@
 .AnimationBansPick {
   --animation-initial-delay: 0.4s;
   --animation-progress: 0.1745s;
+  .TopBar2, .TimeBar {
+    opacity: 0;
+  }
 
   .Pick {
     animation: pick-move-up 0.7s forwards;
@@ -125,6 +135,9 @@
 }
 
 .AnimationBansPickOnly {
+  .TopBar2, .TimeBar {
+    opacity: 0;
+  }
   .Timer {
     .Blue {
       left: 0 !important;
@@ -143,4 +156,26 @@
 
 .AnimationPigs {
   // EPIC gamer moment
+  .TopBar2 {
+    position: absolute;
+    bottom: -300px;
+    animation: topb 0.75s forwards;
+  }
+
+  .BansBlue {
+    transform: translateX(100%);
+    animation: bans-fadein 1s forwards;
+    animation-delay: 1s;
+  }
+  .BansRed {
+    transform: translateX(-100%);
+    animation: bans-fadein 1s forwards;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes topb {
+  100% {
+    bottom: 0px;
+  }
 }

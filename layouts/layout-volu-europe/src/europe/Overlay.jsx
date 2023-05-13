@@ -41,6 +41,7 @@ export default class Overlay extends React.Component {
 
 	render() {
 		const { state, config } = this.props;
+		console.log(config);
 
 		if (state.champSelectActive && !this.state.openingAnimationPlayed) {
 			this.playOpeningAnimation();
@@ -99,6 +100,7 @@ export default class Overlay extends React.Component {
 					'--color-blue': config.frontend.blueTeam.color,
 				}}
 			>
+				{console.log(config)}
 				{Object.keys(state).length === 0 && (
 					<div className={cx(css.infoBox)}>
 						Not connected to backend service!
@@ -112,40 +114,43 @@ export default class Overlay extends React.Component {
 								// <div className={cx(css.infoBox)}>Not connected to client!</div>
 							)}
 							<div className={cx(css.TopBar)}>
-								<div className={cx(css.Bans, css.BansBlue)}>
-									{renderBans(state.blueTeam, 'blue')}
-								</div>
-								<div className={cx(css.MiddleImage)}>
-									<div className={cx(css.TeamContainerBlue)}>
-										<div className={cx(css.TeamNameTop, css.TeamBlue)}>
-											<span className={cx(css.TeamNameShort)}>{config.frontend.blueTeam.tag}</span>
-											<span className={cx(css.TeamNameLong)}>{config.frontend.blueTeam.name}</span>
-										</div>
-										<div className={cx(css.BorderTop)}></div>
-										<div className={cx(css.TeamLogoTop)}>
-											<img src={blueTeamLogo} alt="" />
-										</div>
-										<div className={cx(css.TeamScoreTop)}>{config.frontend.blueTeam.score}</div>
+								<div className={cx(css.TopBar2)}>
+									<div className={cx(css.Bans, css.BansBlue)}>
+										{renderBans(state.blueTeam, 'blue')}
 									</div>
-
-									<div className={cx(css.DetailMidTop)}></div>
-
-									<div className={cx(css.TeamContainerRed)}>
-										<div className={cx(css.TeamScoreTop)}>{config.frontend.redTeam.score}</div>
-										<div className={cx(css.TeamLogoTop)}>
-											<img src={redTeamLogo} alt="" />
+									<div className={cx(css.MiddleImage)}>
+										<div className={cx(css.TeamContainerBlue)}>
+											<div className={cx(css.TeamNameTop, css.TeamBlue)}>
+												{/* <span className={cx(css.TeamNameShort)}>{config.frontend.blueTeam.tag}</span> */}
+												<span className={cx(css.TeamNameLong)}>{config.frontend.blueTeam.name}</span>
+											</div>
+											<div className={cx(css.BorderTop)}></div>
+											<div className={cx(css.TeamLogoTop)}>
+												<img src={blueTeamLogo} alt="" />
+											</div>
+											<div className={cx(css.TeamScoreTop)}>{config.frontend.blueTeam.score}</div>
 										</div>
-										<div className={cx(css.BorderTop)}></div>
-										<div className={cx(css.TeamNameTop, css.TeamRed)}>
-											<span className={cx(css.TeamNameShort)}>{config.frontend.redTeam.tag}</span>
-											<span className={cx(css.TeamNameLong)}>{config.frontend.redTeam.name}</span>
+
+										<div className={cx(css.DetailMidTop)}></div>
+
+										<div className={cx(css.TeamContainerRed)}>
+											<div className={cx(css.TeamScoreTop)}>{config.frontend.redTeam.score}</div>
+											<div className={cx(css.TeamLogoTop)}>
+												<img src={redTeamLogo} alt="" />
+											</div>
+											<div className={cx(css.BorderTop)}></div>
+											<div className={cx(css.TeamNameTop, css.TeamRed)}>
+												{/* <span className={cx(css.TeamNameShort)}>{config.frontend.redTeam.tag}</span> */}
+												<span className={cx(css.TeamNameLong)}>{config.frontend.redTeam.name}</span>
+											</div>
 										</div>
 									</div>
-								</div>
-								<div className={cx(css.Bans, css.BansRed)}>
-									{renderBans(state.redTeam, 'red')}
+									<div className={cx(css.Bans, css.BansRed)}>
+										{renderBans(state.redTeam, 'red')}
+									</div>
 								</div>
 							</div>
+              <div className={cx(css.TimeBar)}></div>
 							<div className={cx(css.MiddleBox)}>
 								{/* <div className={cx(css.Logo)}>
 									<img src={logo} alt="" />

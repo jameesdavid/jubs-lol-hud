@@ -1,5 +1,10 @@
 @import "./fonts";
 
+@font-face {
+    font-family: Acadarena;
+    src: url("../../assets/fonts/acadarena-font.ttf");
+}
+
 body {
     // background: black;
     // font-family: 'Nova Flat', sans-serif;
@@ -22,106 +27,123 @@ body {
     .TopBar {
         width: 100%;
         height: 90px;
-        background: #282828;
+        // background: #181818;
         position: absolute;
-        bottom: 260px;
+        bottom: 263px;
+        z-index: -1;
 
-        display: inline-flex;
-        justify-content: space-between;
-
-        .MiddleImage {
+        .TopBar2 {
             width: 100%;
-            height: 100%;
-            background-image: url('/assets/topo_meio.png');
+            height: 90px;
+            background: #181818;
 
-            display: grid;
-            grid-template: 90px / 1fr 32px 1fr;
-            gap: 1rem;
-            align-items: center;
+            display: inline-flex;
+            justify-content: space-between;
 
-            color: #fff;
-            font-size: 1.3rem;
-            font-family: Gurajada, serif !important;
-
-            .TeamContainerBlue {
-                display: flex;
-                justify-content: flex-end;
+            .MiddleImage {
+                width: 100%;
+                height: 100%;
+                // background-image: url('/assets/topo_meio.png');
+    
+                display: grid;
+                grid-template: 90px / 1fr 50px 1fr;
+                gap: 1rem;
                 align-items: center;
-            }
-
-            .TeamContainerRed {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-            }
-
-            .TeamScoreTop {
+    
+                color: #fff;
                 font-size: 3rem;
-            }
-
-            .DetailMidTop {
-                width: 32px;
-                height: 32px;
-                background-image: url('/assets/acad0.svg');
-                background-size: contain;
-            }
-
-            .TeamNameTop {
-                line-height: 100%;
-                display: flex;
-                flex-flow: column nowrap;
-                justify-content: center;
-                text-transform: uppercase;
-
-                .TeamNameLong {
-                    font-size: 2rem;
+                font-family: Acadarena, serif !important;
+                letter-spacing: 1px;
+    
+                .TeamContainerBlue {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
                 }
-                .TeamNameShort {
-                    font-size: 1.6rem;
+    
+                .TeamContainerRed {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
                 }
-            }
-
-            .TeamLogoTop {
-                width: 60px;
-                height: 60px;
-                margin: 0 10px;
-
-                img {
+    
+                .TeamScoreTop {
+                    font-size: 3rem;
+                }
+    
+                .DetailMidTop {
+                    width: 44px;
+                    height: 44px;
+                    background-image: url('/assets/logo.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+    
+                .TeamNameTop {
+                    line-height: 100%;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+                    text-transform: uppercase;
+    
+                    .TeamNameLong {
+                        font-size: 4rem;
+                    }
+                    .TeamNameShort {
+                        font-size: 1.6rem;
+                    }
+                }
+    
+                .TeamLogoTop {
                     width: 60px;
                     height: 60px;
+                    margin: 0 10px;
+    
+                    img {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+    
+                .TeamBlue {
+                    padding: 0 1rem;
+                    border-right: 3px solid #3FA9F5;
+                    align-items: flex-end;
+                }
+                .TeamRed {
+                    padding: 0 1rem;
+                    border-left: 3px solid #C1272D;
+                    align-items: flex-start;
                 }
             }
-
-            .TeamBlue {
-                padding: 0 1rem;
-                border-right: 3px solid #3FA9F5;
-                align-items: flex-end;
-            }
-            .TeamRed {
-                padding: 0 1rem;
-                border-left: 3px solid #C1272D;
-                align-items: flex-start;
-            }
-        }
-
-        .Bans {
-            .BansBox {
-                display: inline-flex;
-                .Ban {
+    
+            .Bans {
+                background: #181818;
+                .BansBox {
                     display: inline-flex;
-                    .BanImage {
-                        width: 90px;
-                        height: 90px;
-                        background-size: contain;
-                        background-position: center;
-                        img {
+                    .Ban {
+                        display: inline-flex;
+                        .BanImage {
                             width: 90px;
                             height: 90px;
+                            background-size: contain;
+                            background-position: center;
+                            img {
+                                width: 90px;
+                                height: 90px;
+                            }
                         }
                     }
                 }
             }
         }
+    }
+    .TimeBar {
+      height: 3px;
+      width: 100%;
+      background: #A871B8;
+      position: absolute;
+      bottom: 260px;
     }
     .ChampSelect {
         position: absolute;
@@ -138,7 +160,7 @@ body {
         color: white;
         width: var(--box-width);
         height: var(--box-pick-height);
-        background: #282828;
+        background: #161616;
         background-image: url('/assets/meio.png');
         // bottom: var(--champselect-margin-bot);
         // left: 50%;

@@ -10,7 +10,7 @@
     width: 20%;
     height: 100%;
     overflow: hidden;
-    background-color: #0a0a0a;
+    background-color: #161616;
 
     &.Active {
       .PlayerName {
@@ -30,7 +30,7 @@
       color: white;
       background-color: black;
       text-align: center;
-      font-size: calc(0.7 * var(--pick-name-height));
+      font-size: calc(0.8 * var(--pick-name-height));
       line-height: var(--pick-name-height);
     }
 
@@ -76,7 +76,7 @@
 }
 
 &.TeamBlue .Picks .Pick {
-  border-right: 1px solid #3FA9F5;
+  // border-right: 1px solid #3FA9F5;
   &:last-child {
     //  border-right: solid var(--border-between-color) 1px;
    }
@@ -107,7 +107,7 @@
   }
 }
 &.TeamRed .Picks .Pick {
-  border-left: 1px solid #C1272D;
+  // border-left: 1px solid #C1272D;
   &:first-child {
     // border-left: solid var(--border-between-color) 1px;
   }
