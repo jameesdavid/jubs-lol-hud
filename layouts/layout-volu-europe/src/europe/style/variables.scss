@@ -1,11 +1,11 @@
 :root {
-  --box-width: 572px;
+  --box-width: 360px;
   --box-height: calc(var(--box-pick-height) + var(--box-ban-height));
   --box-logo-height: calc(100% - calc(var(--box-ban-height) + var(--box-patch-height)));
   --box-timer-height: var(--box-ban-height);
   --box-patch-height: 40px;
 
-  --box-team-width: 675px;
+  --box-team-width: 780px;
   --box-pick-height: 260px;
   --box-ban-height: 90px;
   --box-ban-spacer: calc(var(--box-ban-height) / 2);
@@ -20,7 +20,8 @@
 
   --color-red: rgb(222,40,70);
   --color-blue: rgb(0,151,196);
-  --color-roxo: #9970b4;
+  --color-green: rgba(0, 77, 0, 0.822);
+  --color-roxo: #dbac00e5;
 
   --border-between-color: darkgray;
   --border-width: 3px;

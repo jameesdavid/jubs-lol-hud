@@ -25,6 +25,7 @@ class State extends EventEmitter {
     this.data.blueTeam = new Team();
     this.data.redTeam = new Team();
     this.data.timer = 0;
+    this.data.oldTimer = 0;
     this.data.champSelectActive = false;
 
     this.emit('champSelectEnded');
@@ -51,6 +52,7 @@ class State extends EventEmitter {
     }
 
     if (this.data.timer !== state.timer) {
+      this.data.oldTimer = this.data.timer;
       this.data.timer = state.timer;
       shouldUpdate = true;
     }

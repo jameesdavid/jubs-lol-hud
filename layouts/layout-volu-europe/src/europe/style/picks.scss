@@ -30,7 +30,8 @@
       color: white;
       background-color: black;
       text-align: center;
-      font-size: calc(0.8 * var(--pick-name-height));
+      font-size: calc(0.5 * var(--pick-name-height));
+      font-weight: 600;
       line-height: var(--pick-name-height);
     }
 
@@ -102,7 +103,7 @@
     span {
       position: relative;
       z-index: 10;
-      font-size: 22px;
+      font-size: 14px;
     }
   }
 }
@@ -130,7 +131,7 @@
     span {
       position: relative;
       z-index: 10;
-      font-size: 22px;
+      font-size: 14px;
     }
   }
 }

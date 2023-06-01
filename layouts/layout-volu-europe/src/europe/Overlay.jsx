@@ -8,6 +8,7 @@ import Ban from './Ban';
 import blueTeamLogo from '../assets/logos/blue.png';
 import redTeamLogo from '../assets/logos/red.png';
 
+
 export default class Overlay extends React.Component {
 	state = {
 		currentAnimationState: css.TheAbsoluteVoid,
@@ -39,9 +40,40 @@ export default class Overlay extends React.Component {
 		}, 500);
 	}
 
+	// 28 28
+	
+	getTransition(tempo, old) {
+		console.log(old, tempo);
+		if (tempo > old) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	getPercentage(tempo) {
+    const maxTime = 28;  // valor máximo do temporizador
+    const maxPercentage = 50;  // percentagem máxima que queremos alcançar
+
+    // calcular a porcentagem atual, o tempo restante dividido pelo tempo máximo (28 segundos)
+    let currentPercentage = ((maxTime - tempo) / maxTime) * maxPercentage;
+
+    return `${currentPercentage.toFixed(2)}%`;  // retornar a percentagem como string formatada
+	}
+
+	getPercentage2(tempo) {
+    const maxTime = 28;  // valor máximo do temporizador
+    const minPercentage = 50;  // percentagem mínima que queremos alcançar
+    const maxPercentage = 100;  // percentagem máxima que queremos alcançar
+
+    // calcular a porcentagem atual, subtrair a porcentagem atual do tempo restante da porcentagem máxima
+    let currentPercentage = maxPercentage - (((maxTime - tempo) / maxTime) * (maxPercentage - minPercentage));
+
+    return `${currentPercentage.toFixed(2)}%`;  // retornar a percentagem como string formatada
+	}
+
 	render() {
 		const { state, config } = this.props;
-		console.log(config);
 
 		if (state.champSelectActive && !this.state.openingAnimationPlayed) {
 			this.playOpeningAnimation();
@@ -150,7 +182,9 @@ export default class Overlay extends React.Component {
 									</div>
 								</div>
 							</div>
-              <div className={cx(css.TimeBar)}></div>
+							<div className={cx(css.TimeBarBackground)}>
+              	<div className={cx(css.TimeBar, (this.getTransition(state.timer, state.oldTimer) == true ? css.transition : null))} style={{width: `${(state.timer * 100 / 27) > 100 ? 100 : (state.timer * 100 / 27)}%`}}></div>
+							</div>
 							<div className={cx(css.MiddleBox)}>
 								{/* <div className={cx(css.Logo)}>
 									<img src={logo} alt="" />
@@ -166,7 +200,7 @@ export default class Overlay extends React.Component {
 								>
 									<div className={cx(css.Background, css.Blue)} />
 									<div className={cx(css.Background, css.Red)} />
-									{state.timer < 100 && (
+									{/* {state.timer < 100 && (
 										<div className={cx(css.TimerChars)}>
 											{state.timer
 												.toString()
@@ -180,7 +214,7 @@ export default class Overlay extends React.Component {
 									)}
 									{state.timer >= 100 && (
 										<div className={cx(css.TimerChars)}>{state.timer}</div>
-									)}
+									)} */}
 								</div>
 							</div>
 							{renderTeam(css.TeamBlue, config.frontend.blueTeam, state.blueTeam)}

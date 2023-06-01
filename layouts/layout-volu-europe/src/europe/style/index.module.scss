@@ -1,14 +1,16 @@
 @import "./fonts";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @font-face {
-    font-family: Acadarena;
-    src: url("../../assets/fonts/acadarena-font.ttf");
+    font-family: Worker Black;
+    src: url("../../assets/fonts/Worker-Black.otf");
 }
 
 body {
     // background: black;
     // font-family: 'Nova Flat', sans-serif;
-    font-family: Gurajada, serif;
+    font-family: 'Montserrat', sans-serif;
 
     // background: url("https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/06/14131635/LEC-Summer-2019.jpg");
     background-size: cover;
@@ -46,14 +48,13 @@ body {
                 // background-image: url('/assets/topo_meio.png');
     
                 display: grid;
-                grid-template: 90px / 1fr 50px 1fr;
+                grid-template: 90px / 1fr 44px 1fr;
                 gap: 1rem;
                 align-items: center;
     
                 color: #fff;
-                font-size: 3rem;
-                font-family: Acadarena, serif !important;
-                letter-spacing: 1px;
+                font-size: 1rem;
+                font-family: 'Worker Black', sans-serif;
     
                 .TeamContainerBlue {
                     display: flex;
@@ -68,7 +69,7 @@ body {
                 }
     
                 .TeamScoreTop {
-                    font-size: 3rem;
+                    font-size: 35px;
                 }
     
                 .DetailMidTop {
@@ -87,10 +88,11 @@ body {
                     text-transform: uppercase;
     
                     .TeamNameLong {
-                        font-size: 4rem;
+                        font-size: 30px;
+                        font-weight: 600;
                     }
                     .TeamNameShort {
-                        font-size: 1.6rem;
+                        font-size: 1rem;
                     }
                 }
     
@@ -107,12 +109,12 @@ body {
     
                 .TeamBlue {
                     padding: 0 1rem;
-                    border-right: 3px solid #3FA9F5;
+                    // border-right: 3px solid #3FA9F5;
                     align-items: flex-end;
                 }
                 .TeamRed {
                     padding: 0 1rem;
-                    border-left: 3px solid #C1272D;
+                    // border-left: 3px solid #C1272D;
                     align-items: flex-start;
                 }
             }
@@ -138,19 +140,31 @@ body {
             }
         }
     }
-    .TimeBar {
-      height: 3px;
-      width: 100%;
-      background: #A871B8;
+    .TimeBarBackground {
+      width: 1920px;
       position: absolute;
       bottom: 260px;
+      display: flex;
+      justify-content: center;
+      background: #000;
+
+      .TimeBar {
+        background: rgb(48,166,221);
+        background: linear-gradient(90deg, rgba(48,166,221,1) 0%, rgba(255,198,5,1) 40%, rgba(255,198,5,1) 60%, rgba(80,179,82,1) 100%);
+        height: 8px;
+      }
     }
+
+    .transition {
+      transition: width 1s linear;
+    }
+
     .ChampSelect {
         position: absolute;
         bottom: 0;
         width: 100%;
         display: grid;
-        grid-template-columns: 674px 572px 674px;
+        grid-template-columns: 780px 360px 780px;
         grid-template-rows: 1fr;
         grid-column-gap: 0px;
         grid-row-gap: 0px;

@@ -62,7 +62,7 @@
     .Picks {
       .Pick {
         .PickImage.Active::before {
-          background-image: linear-gradient(to left, var(--color-roxo) 0%, rgba(0, 0, 0, 0) 50%, var(--color-roxo) 100%);
+          background-image: linear-gradient(to left, var(--color-green) 0%, rgba(0, 0, 0, 0) 50%, var(--color-green) 100%);
         }
       }
     }

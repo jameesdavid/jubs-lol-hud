@@ -28,6 +28,7 @@ function App() {
     const [error, setError] = useState('');
     useEffect(() => {
         Window.PB.on('newState', state => {
+            console.log("state:", state);
             setGlobalState(state.state);
             setConfig(state.state.config);
         });
