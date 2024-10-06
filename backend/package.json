@@ -3,13 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "main": "electron-main.js",
+  "bin": "./backend-build/app.js",
+  "pkg": {
+    "assets": [
+      "node_modules/league-connect/riotgames.pem"
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "npm run build && node backend-build/app.js",
     "tsc": "tsc",
     "lint": "eslint backend/**",
-    "electron-dev": "npm run build && electron ."
+    "electron-dev": "npm run build && electron .."
   },
   "dependencies": {
     "@types/fs-extra": "9.0.0",
@@ -37,6 +43,7 @@
     "@typescript-eslint/parser": "^2.3.2",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "electron": "^31.3.1",
     "eslint": "^6.1.0",
     "eslint-plugin-import": "^2.18.2"
   }

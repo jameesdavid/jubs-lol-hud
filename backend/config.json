@@ -4,15 +4,15 @@
     "spellsEnabled": false,
     "coachesEnabled": false,
     "blueTeam": {
-      "name": "Titans",
+      "name": "Eagles",
       "tag": "UFSC",
-      "logo": "ufsc-titans.png",
+      "logo": "ufpr-bbn.png",
       "score": 0,
       "coach": "Coach Blue",
-      "color": "rgb(0,151,196)"
+      "color": "rgb(0,0,0)"
     },
     "redTeam": {
-      "name": "Poliplague",
+      "name": "BBN",
       "tag": "USP",
       "logo": "usp-poliplague.png",
       "score": 0,
